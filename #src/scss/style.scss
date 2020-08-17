@@ -2,14 +2,13 @@
   @font-face {
     font-family: $font_name;
     font-display: swap;
-    src: url("../fonts/#{$file_name}.woff") format("woff"),
-      url("../fonts/#{$file_name}.woff2") format("woff2");
+    src: url('../fonts/#{$file_name}.woff') format('woff'), url('../fonts/#{$file_name}.woff2') format('woff2');
     font-weight: #{$weight};
     font-style: #{$style};
   }
 }
-@import "libs/normalize";
-@import "fonts";
+@import 'libs/normalize';
+@import 'fonts';
 html,
 body {
   height: 100%;
@@ -23,4 +22,43 @@ body {
 }
 .footer {
   flex-shrink: 0;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg-icons8-dota-2-dims {
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 150px;
+  height: 150px;
+  filter: opacity(0.5);
+  &:hover {
+    filter: opacity(1);
+  }
+}
+.svg-icons8-league-of-legends-dims {
+  cursor: pointer;
+  transition: all 0.5s;
+  width: 150px;
+  height: 150px;
+  filter: opacity(0.5);
+  &:hover {
+    filter: opacity(1);
+  }
+}
+.svg-icons8-valorant-dims {
+  cursor: pointer;
+  transition: all 0.5s;
+  width: 150px;
+  height: 150px;
+  filter: opacity(0.5);
+  &:hover {
+    filter: opacity(1);
+  }
 }
