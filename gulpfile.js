@@ -58,7 +58,7 @@ function browserSync(params) {
 }
 
 function html() {
-  return src(path.src.html).pipe(fileinclude()).pipe(webphtml()).pipe(dest(path.build.html)).pipe(browsersync.stream())
+  return src(path.src.html).pipe(fileinclude()).pipe(dest(path.build.html)).pipe(browsersync.stream())
 }
 
 function css() {
@@ -75,7 +75,6 @@ function css() {
         cascade: true
       })
     )
-    .pipe(webpcss({}))
     .pipe(dest(path.build.css))
     .pipe(clean_css())
     .pipe(
@@ -101,25 +100,25 @@ function js() {
 }
 function images() {
   return src(path.src.img)
-    .pipe(
-      webp({
-        quality: 70
-      })
-    )
-    .pipe(dest(path.build.img))
-    .pipe(src(path.src.img))
-    .pipe(
-      imagemin({
-        progressive: true,
-        svgoPlugins: [
-          {
-            removeViewBox: false
-          }
-        ],
-        interlaced: true,
-        optimizationLevel: 3 // 0 to 7
-      })
-    )
+    // .pipe(
+    //   webp({
+    //     quality: 70
+    //   })
+    // )
+    // .pipe(dest(path.build.img))
+    // .pipe(src(path.src.img))
+    // .pipe(
+    //   imagemin({
+    //     progressive: true,
+    //     svgoPlugins: [
+    //       {
+    //         removeViewBox: false
+    //       }
+    //     ],
+    //     interlaced: true,
+    //     optimizationLevel: 3 // 0 to 7
+    //   })
+    // )
     .pipe(dest(path.build.img))
     .pipe(browsersync.stream())
 }
